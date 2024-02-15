@@ -1,0 +1,51 @@
+<div class="content row d-flex justify-content-center m-5" role="main">
+   <div class="row">
+      <button type="button" class="col-2 btn btn-info ms-0" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" data-bs-dismiss="modal" >เพิ่มข้อมูล</button>
+   </div>
+
+   <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+      <div class="row justify-content-center mt-5">
+        <table  id="excel-table" class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">No.</th>
+              <th scope="col">id</th>
+              <th scope="col">department</th>
+              <th scope="col">name</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of users; let i = index">
+              <th scope="row">{{i+1}}</th>
+              <td >{{item?.id}}</td>
+              <td >{{setNameDepartment(item?.department_id)}}</td>
+              <td >{{item?.first_name}} {{item?.last_name}}</td>
+              <td >
+               <button type="button" class="col-4 btn btn-info ms-0" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" (click)="selectUserEdit(item)" data-bs-dismiss="modal" >แก้ไข</button>
+               <button type="button" class="col-4 btn btn-info ms-1" (click)="deleteUser(item.id)" >ลบ</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+
+    <div class="modal fade modal-lg" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalToggleLabel2">เพิ่มข้อมูล</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <app-form-user
+          [userEdit]="userEdit"
+          (eventReturnData)="dataFromUserChildren($event)"
+          >
+          </app-form-user>
+        </div>
+      </div>
+    </div>
+</div>
+

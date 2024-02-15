@@ -1,0 +1,64 @@
+<div class="content row d-flex justify-content-center m-2 mt-3 bg font_mali" role="main">
+
+    <!-- <div class="row d-flex justify-content-center mt-3">
+      <label for="formFile" class="d-flex align-items-left col-12 font_bold">คำนำหน้าชื่อ</label>
+      <div class="col-12">
+        <div class="row">
+          <select  class="form-select" aria-label="Default select example" [(ngModel)]="userInfo.title">
+            <option *ngFor="let titlename of titleNames" [value]="titlename">
+              {{titlename}}
+            </option>
+          </select>
+        </div>
+      </div>
+    </div> -->
+
+    <div class="row d-flex justify-content-center mt-3">
+      <label for="formFile" class="d-flex align-items-left col-12 font_bold">ชื่อ</label>
+      <div class="col-12">
+        <div class="row">
+          <input class="form-control" [(ngModel)]="userInfo.first_name" type="text"/>
+        </div>
+      </div>
+    </div>
+
+    <div class="row d-flex justify-content-center mt-3">
+      <label for="formFile" class="d-flex align-items-left col-12 font_bold">นามสกุล</label>
+      <div class="col-12">
+        <div class="row">
+          <input class="form-control" [(ngModel)]="userInfo.last_name" type="text"/>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="row d-flex justify-content-center mt-3">
+      <label for="formFile" class="d-flex align-items-left col-12 font_bold">Department</label>
+      <div class="col-12">
+        <div class="row">
+          <select  class="form-select" aria-label="Default select example" [(ngModel)]="userInfo.department_id">
+            <option *ngFor="let department of departments" [value]="department.id">
+              {{department.name}}
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row d-flex justify-content-center mt-3">
+      <label for="formFile" class="d-flex align-items-left col-12 font_bold">Id</label>
+      <div class="col-12">
+        <div class="row">
+          <input class="form-control" [value]="userInfo.id" disabled type="text"/>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row d-flex justify-content-center mt-5 mb-5">
+      <button type="button" class="btn btn-info col-md-3" (click)="onSave()" >บันทึก</button>
+    </div>
+
+</div>

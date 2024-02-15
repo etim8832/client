@@ -1,0 +1,10 @@
+/* You can add global styles to this file, and also import other style files */
+
+@font-face {
+    font-family: 'Mali';
+    src: url('assets/fonts/Mali-Regular.ttf')
+}
+
+body {
+    background-color: #e6e7ee;
+}
